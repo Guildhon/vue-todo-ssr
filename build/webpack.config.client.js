@@ -56,7 +56,7 @@ if (isDev) {
 } else {
     config = merge(baseConfig, {
         entry: {
-            app: path.join(__dirname, '../src/index.js'),
+            app: path.join(__dirname, '../client/index.js'),
             vendor: ['vue']                        // 将框架库文件单独打包到一起
         },
         output: {
