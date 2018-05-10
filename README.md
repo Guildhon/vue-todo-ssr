@@ -43,5 +43,7 @@ eslint命令加--fix会自动修复
 
 配置babel-eslint和eslint-loader能在每次改代码保存的时候就去校验
 
-文件.editorconfig规范IDE的行为
+文件.editorconfig规范IDE的行为，我使用的是webstorm，需要开启eslint插件支持
+
+husky但我们使用git的commit的时候校验代码是否通过eslint，不通过则不commit
 
