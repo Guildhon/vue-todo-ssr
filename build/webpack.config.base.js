@@ -1,4 +1,5 @@
 const path = require('path')
+const createVueLoaderOptions = require('./vue-loader.config')
 
 // 判断是否是开发环境
 const isDev = process.env.NODE_ENV === 'development'
@@ -14,7 +15,8 @@ const config = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: createVueLoaderOptions(isDev)
             },
             {
                 test: /\.jsx$/,

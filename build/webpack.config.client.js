@@ -35,7 +35,24 @@ if (isDev) {
             rules: [{
                 test: /\.styl/,
                 use: [
-                    'style-loader',
+                    'vue-style-loader',
+                    /*{
+                        loader: 'css-loader',
+                        options: {
+                            module: true,         // 开启了css的module功能
+                            localIdentName: isDev ? '[path]-[name]-[hash:base64:5]' : '[hash:base64:5]', // 修改class名字，这样更容易定位位置,保密性好，不会重复；其实用scope也可以
+                        }
+
+                     // 使用
+                     import className from '../../assert/styles/footer.styl'
+                     return (
+                        <div id={className.footer}>
+                        <span>writtern by {this.author}</span>
+                        </div>
+                     )
+
+
+                    },*/
                     'css-loader',
                     {
                         loader: "postcss-loader",
@@ -66,7 +83,7 @@ if (isDev) {
             rules: [{
                 test: /\.styl/,
                 use: ExtractPlugin.extract({
-                    fallback: 'style-loader',
+                    fallback: 'vue-style-loader',
                     use: [
                         'css-loader',
                         {

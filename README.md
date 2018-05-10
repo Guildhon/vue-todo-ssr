@@ -33,3 +33,7 @@ extract-text-webpack-plugin把非javascript的文件单独打包
 
 webpack-merge将webpack拆开的配置进行合并
 
+vue-style-loader使得css可以实现热重载
+
+rimraf用来删除dist目录，如果报错找不到，则cnpm install -D rimraf@2.6.2，这样会从本地库的node_modules里面的.bin查找
+
