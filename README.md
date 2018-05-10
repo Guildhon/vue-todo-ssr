@@ -45,5 +45,5 @@ eslint命令加--fix会自动修复
 
 文件.editorconfig规范IDE的行为，我使用的是webstorm，需要开启eslint插件支持
 
-husky但我们使用git的commit的时候校验代码是否通过eslint，不通过则不commit
+husky但我们使用git的commit的时候校验代码是否通过eslint，不通过则不commit，但得先git init，再安装执行husky
 
