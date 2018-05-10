@@ -37,3 +37,11 @@ vue-style-loader使得css可以实现热重载
 
 rimraf用来删除dist目录，如果报错找不到，则cnpm install -D rimraf@2.6.2，这样会从本地库的node_modules里面的.bin查找
 
+eslint-plugin-html使eslint可以识别.vue文件里的html
+
+eslint命令加--fix会自动修复
+
+配置babel-eslint和eslint-loader能在每次改代码保存的时候就去校验
+
+文件.editorconfig规范IDE的行为
+

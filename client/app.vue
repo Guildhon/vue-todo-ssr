@@ -13,16 +13,16 @@
     import Todo from './views/todo/todo.vue'
 
     export default {
-        data () {
-            return {
-                text: 'absc'
-            }
-        },
-        components: {
-            Header,
-            Todo,
-            Footer
+      data () {
+        return {
+          text: 'absc'
         }
+      },
+      components: {
+        Header,
+        Todo,
+        Footer
+      }
     }
 </script>
 

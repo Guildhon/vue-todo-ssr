@@ -9,49 +9,49 @@
 <script>
     import Item from './item.vue'
     import Tabs from './tabs.vue'
-    let id = 0;
-    export default {
-        data () {
-            return {
-                todos: [],
-                filter: 'all'
-            }
-        },
-        computed: {
-            todoLength () {
-                return this.todos.length
-            },
-            filteredTodos () {
-                if (this.filter === 'all') {
-                    return this.todos
-                }
-                const completed = this.filter === 'completed'
-                return this.todos.filter((item) => item.completed === completed)
-            }
-        },
-        components: {
-            Item,
-            Tabs
-        },
-        methods: {
-            addTodo (e) {
-                this.todos.push({
-                    id: id++,
-                    content: e.target.value.trim(),
-                    completed: false
-                })
-                e.target.value = ''
-            },
-            deleteTodo (id) {
-                this.todos.splice(this.todos.findIndex(todo => todo.id === id),1)
-            },
-            toggleFilter(state) {
-                this.filter = state
-            },
-            clearAllCompleted () {
-                this.todos = this.todos.filter(item => item.completed === false)
-            }
+    let id = 0
+export default {
+      data () {
+        return {
+          todos: [],
+          filter: 'all'
         }
+      },
+      computed: {
+        todoLength () {
+          return this.todos.length
+        },
+        filteredTodos () {
+          if (this.filter === 'all') {
+            return this.todos
+          }
+          const completed = this.filter === 'completed'
+          return this.todos.filter((item) => item.completed === completed)
+        }
+      },
+      components: {
+        Item,
+        Tabs
+      },
+      methods: {
+        addTodo (e) {
+          this.todos.push({
+            id: id++,
+            content: e.target.value.trim(),
+            completed: false
+          })
+          e.target.value = ''
+        },
+        deleteTodo (id) {
+          this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)
+        },
+        toggleFilter (state) {
+          this.filter = state
+        },
+        clearAllCompleted () {
+          this.todos = this.todos.filter(item => item.completed === false)
+        }
+      }
     }
 </script>
 

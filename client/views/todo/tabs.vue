@@ -17,29 +17,29 @@
 
 <script>
     export default {
-        props: {
-            filter: {
-                type: String,
-                required: true
-            },
-            todoLength: {
-                type: Number,
-                required: true
-            }
+      props: {
+        filter: {
+          type: String,
+          required: true
         },
-        data () {
-            return {
-                states: ['all', 'active','completed']
-            }
-        },
-        methods: {
-            toggleFilter (state) {
-                this.$emit('toggle',state)
-            },
-            clearAllCompleted () {
-                this.$emit('clearAllCompleted')
-            }
+        todoLength: {
+          type: Number,
+          required: true
         }
+      },
+      data () {
+        return {
+          states: ['all', 'active', 'completed']
+        }
+      },
+      methods: {
+        toggleFilter (state) {
+          this.$emit('toggle', state)
+        },
+        clearAllCompleted () {
+          this.$emit('clearAllCompleted')
+        }
+      }
     }
 </script>
 <style lang="stylus" scoped>
