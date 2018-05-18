@@ -14,7 +14,9 @@ const defaultPlugins = [                                  // 用在浏览器端�
             NODE_ENV: isDev ?  '"development"' : '"production"'
         }
     }),
-    new HTMLPlugin()
+    new HTMLPlugin({
+      template: path.join(__dirname, 'template.html')
+    })
 ]
 
 let config
@@ -24,6 +26,9 @@ const devServer = {
     host: '0.0.0.0',
     overlay: {
         errors: true,        // 错误显示在网页上
+    },
+    historyApiFallback: {
+      index: '/public/index.html' // 当匹配的文件不存在时取配置的文件
     },
     hot: true               // 组件热重载，需要下面两个插件配合
 }

@@ -11,6 +11,25 @@
     import Tabs from './tabs.vue'
     let id = 0
 export default {
+      beforeRouteEnter (to, from, next) {
+        console.log('todo router enter')
+        next(vm => {
+          console.log(vm)
+        })
+      },
+      beforeRouteUpdate (to, from, next) { // 作为父路由。子路由改变则触发函数
+        console.log('todo router update')
+        next()
+      },
+      beforeRouteLeave (to, from, next) {
+        console.log('todo router leave')
+        if (global.confirm('are you sure?')) {
+          next()
+        }
+      },
+      mounted () {
+        console.log('mounted') // 如果是app:12进入app:29类似这种就不会执行钩子函数，使用beforeRouteUpdate
+      },
       data () {
         return {
           todos: [],

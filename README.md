@@ -47,6 +47,11 @@ eslint命令加--fix会自动修复
 
 husky但我们使用git的commit的时候校验代码是否通过eslint，不通过则不commit，但得先git init，再安装执行husky
 
+babel-plugin-syntax-dynamic-import是为了能使用import()语法
+```
+component: () => import('../views/todo/todo.vue'), // 为了异步组件
+```
+
 更新webpack
 ```
 项目使用的webpack是3.10.0，如果要升级到4，则需要把原来的webpack包uninstall掉，重新install新的包，然后查看install完报的NPM WARN，重新install更替掉包，有可能未发布的得extract-text-webpack-plugin@next
